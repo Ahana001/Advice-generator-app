@@ -10,6 +10,11 @@ function fetchAdvices() {
             index.innerText = `ADVICE  #${res.slip.id}`;
             advice.innerText = `"${res.slip.advice}"`;
         })
+        .catch((err) => {
+            index.innerText = `ADVICE  #0`;
+            advice.innerText = `Error occured. please try after some time`;
+            console.log("error");
+        })
 }
 btn.addEventListener('click', () => {
     fetchAdvices();
